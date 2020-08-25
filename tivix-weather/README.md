@@ -1,27 +1,40 @@
 # TivixWeather
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23. Use is strictly for review by Tivix and myself.
 
-## Development server
+## Description
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This project followed requirements given by Tivix:
+Directions: 
+- Using Angular, make a request to a free API: https://openweathermap.org/api
+- Get the 5-day forecast for a target city.
+- Let the user click to view the min, max, and mean temperatures for that city.
+- Your solution should be provided as a link to a Github repository with a README on how to get it up and running. 
 
-## Code scaffolding
+## How to use
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Enter any city name in the United States into the input field. 
+Once a city is entered- the submit button will become available.
+Press the submit button.
 
-## Build
+Once weather data comes back, you will see both current data and a 5 day forecast.
+Click on 'max' 'min' or 'mean' under each forecasted day to view.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Project setup
 
-## Running unit tests
+npm install
+npm run serve
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## APIs used
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
+getLatLon: 'https://api.opencagedata.com/geocode/v1/json?'
+getForecast: 'https://api.openweathermap.org/data/2.5/onecall?'
+  
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Contact
+
+Scott Pinkerton -- smp3000ks@gmail.com
