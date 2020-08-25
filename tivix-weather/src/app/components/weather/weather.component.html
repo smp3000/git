@@ -1,0 +1,64 @@
+<form class="weather-form" (ngSubmit)="cityLookup()" [formGroup]="myForm">
+  <mat-form-field class="full-width">
+    <mat-label>Enter City Name</mat-label>
+    <input matInput placeholder="Ex. Memphis" required maxlength="30" minlength="2" formControlName="city">
+  </mat-form-field>
+  <!-- <mat-form-field class="state-drop">
+    <mat-label>State</mat-label>
+    <mat-select name="state" required formControlName="state">
+      <mat-option *ngFor="let state of states" [value]="state.abbreviation">
+        {{state.abbreviation}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field> -->
+  <br>
+  <button type="submit" mat-raised-button color="primary" [disabled]="myForm.invalid">Submit</button>
+</form>
+<div *ngIf="currently?.weather">
+  <div class="flex-row all_div">
+    <div class="c-temp all_div">
+      <span>Currently </span>
+      <span>{{ currently.temp }} F</span>
+      <span>Feels like </span>
+      <span>{{ currently.feels_like }} F</span>
+      <img src="http://openweathermap.org/img/wn/{{currently.weather[0].icon}}@2x.png"/>
+      <span>{{ currently.weather[0].description }}</span>
+    </div>
+  </div>
+</div>
+<br>
+<div *ngIf="cityData?.daily">
+  <div class="flex-row all_div" >
+  <div *ngFor="let day of cityData?.daily; let i=index">
+    <div *ngIf="i<5">
+      <div class="temp all_div">
+        <span style="font-weight: bolder;">{{ day.dt * 1000 | date }}</span>
+        <button mat-stroked-button color="basic" (click)="showMax[i] = !showMax[i]" id="max-bt">max</button>
+
+          <div style="margin: 0 auto;text-align: left;" [hidden]="!showMax[i]">
+            {{ day.temp.max }} F
+          </div>
+
+        <button mat-stroked-button color="basic" (click)="showMin[i] = !showMin[i]" id="min-bt">min</button>
+
+          <div style="margin: 0 auto;text-align: left;" [hidden]="!showMin[i]">
+            {{ day.temp.min }} F
+          </div>
+
+        <button mat-stroked-button color="basic" (click)="showMean[i] = !showMean[i]" id="mean-bt">mean</button>
+
+          <div style="margin: 0 auto;text-align: left;" [hidden]="!showMean[i]">
+            <!-- calculate mean temp -->
+            {{ (day.temp.max + day.temp.min) / 2 | number: '1.0-0'}} F
+          </div>
+
+      </div>
+      <div class="outlook all_div">
+        <img src="http://openweathermap.org/img/wn/{{day.weather[0].icon}}@2x.png"/>
+        <span>{{ day.weather[0].description }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

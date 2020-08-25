@@ -1,0 +1,87 @@
+.weather-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.full-width {
+  width: 250px;
+}
+
+.state-drop {
+  width: 120px;
+  height: 55px;
+  padding-left: 15px;
+  vertical-align: top;
+}
+.days {
+  width: 80px;
+  height: 80px;
+}
+.cells {
+  width: 100%;
+}
+.desc {
+  font-size: medium;
+  float: left;
+}
+.date {
+  font-size: medium;
+  float: left;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.all_div {
+  flex: 50%;
+  border-radius: 10px;
+  padding: 10px;
+}
+.c-outlook {
+  color: black;
+  background: rgba(0,0,0,0.1);
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.c-temp {
+  background-color:#3f51b5b7;
+  color: black;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.outlook {
+  color: black;
+  background: rgba(0,0,0,0.1);
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.temp {
+  background-color:#3f51b5b7;
+  color: black;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.big-text {
+  font-size: 30px;
+}
+.image {
+  height: 80px;
+}
+[hidden] {
+  display: none !important;
+}
